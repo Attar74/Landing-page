@@ -4,6 +4,12 @@
 
 - HTML
 - CSS
-- JavaScript
+- JavaScript(DOM)
 
-## The Functionalities 
+## Usage
+
+- This Landing Project for Udacity Nanodegree
+
+## Contributing
+
+- clone it and open index.html with any browser

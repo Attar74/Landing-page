@@ -20,18 +20,13 @@
 
 const navigation = document.querySelector('header nav ul#navbar__list');
 const sections = document.querySelectorAll('section');
-const nav = document.querySelector('header nav.navbar__menu');
 
 /**
  * End Global Variables
- * Start Helper Functions
  * 
 */
 
-
-
 /**
- * End Helper Functions
  * Begin Main Functions
  * 
 */
@@ -39,31 +34,15 @@ const nav = document.querySelector('header nav.navbar__menu');
 // build the nav
 const navBuilder = () =>{
     let navUI = '';
-sections.forEach(section => {
-    const sectionId = section.id;
-    const sectionDataNav = section.dataset.nav;
-    navUI += `<li><a class="menu__link" href="#${sectionId}">${sectionDataNav}</a></li>`;
-
-});
-navigation.innerHTML = navUI;
-navigation.style = "color:red";
+    sections.forEach(section => {
+        const sectionId = section.id;
+        const sectionDataNav = section.dataset.nav;
+        navUI += `<li><a class="menu__link" href="#${sectionId}">${sectionDataNav}</a></li>`;
+    });
+    navigation.innerHTML = navUI;
+    navigation.style = "color:red";
 }
 navBuilder();
-
-////////////////*///////////////////////////////*
-// sections.forEach((section,i) => {
-//     let li = document.createElement('li'),
-//         a = document.createElement('a');
-//     li.appendChild(a);
-//     a.innerText = section.dataset.nav;
-//     a.setAttribute('href','#section'+(i+1));
-//     a.setAttribute('class','menu__link');
-//     a.style = "text-decoration: none; target=_blank";
-//     // li.style = "padding: 20px 120px 20px 0px;";
-//     navigation.appendChild(li);
-// });
-////////////////*///////////////////////////////*
-
 
 
 // Add class 'active' to section when near top of viewport
@@ -91,12 +70,12 @@ const addActive = (condition, section) => {
     }
 }; 
 
-//implementiog the actual function 
+//implementing of setting the activitaion function 
 
 const sectionActivitaion = () =>{
     sections.forEach(section => {
-        const elementOffset = offset(section); 
-        inviewport = () => elementOffset < 150 && elementOffset >= -480;
+        const elementOffset = offset(section);
+        const inviewport = () => elementOffset < 150 && elementOffset >= -480;
         removeActive(inviewport(),section);
         addActive(inviewport(),section);
     })
@@ -104,31 +83,8 @@ const sectionActivitaion = () =>{
 
 window.addEventListener('scroll',sectionActivitaion);
 
-// Scroll to anchor ID using scrollTO event
-
-////////////////*///////////////////////////////*
-// const scrolling  = () => {
-//     const links = document.querySelectorAll('.navbar__menu a');
-//     links.forEach(link => {
-//         link.addEventListener('click', () => {
-//             for(let i = 0; i<sections.length;i++){
-//                 sections[i].addEventListener('click',sectionScroll(link));
-//             };
-//         });
-//     });
-// };
-// scrolling();
-////////////////*///////////////////////////////*
-
-
 /**
  * End Main Functions
- * Begin Events
- * 
-*/
+**/
 
-// Build menu 
 
-// Scroll to section on link click
-
-// Set sections as active
