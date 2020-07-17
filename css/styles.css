@@ -222,3 +222,18 @@ section.your-active-class .landing__container::after {
 	}
 }
 /*/////////////////////////////////*/
+@media only screen and (max-width: 330px){
+    header nav ul#navbar__list {
+        display: inline-block;
+        width:40%;
+        margin-left: 30%;
+    }
+    header nav ul#navbar__list li a {
+        margin: 1% 0;
+    }
+}
+@media only screen and (max-width: 211px){
+    header nav ul#navbar__list {
+        display: none;
+    }
+}
